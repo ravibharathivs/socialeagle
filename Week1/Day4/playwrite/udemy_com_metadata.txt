@@ -1,0 +1,22 @@
+
+Website Metadata Extraction
+===========================
+
+URL: https://www.bing.com/search?form=QBLH&q=udemy.com&form=QBLH
+Title: udemy.com - Search
+
+Meta Tags
+---------------------------------
+None: text/html; charset=utf-8
+referrer: origin-when-cross-origin
+og:description: Intelligent search from Bing makes it easier to quickly find what you’re looking for and rewards you.
+og:site_name: Bing
+og:title: udemy.com - Bing
+og:url: https://www.bing.com/search?form=QBLH&q=udemy.com&form=QBLH
+fb:app_id: 3732605936979161
+og:image: http://www.bing.com/sa/simg/facebook_sharing_5.png
+og:type: website
+og:image:width: 600
+og:image:height: 315
+
+Extracted At: 2026-02-27 23:33:44.822474

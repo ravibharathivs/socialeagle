@@ -1,0 +1,15 @@
+# Environments
+.venv/
+env/
+venv/
+ENV/
+.myenv/
+
+# VS Code / Pylance
+.vscode/
+.python-learn/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
