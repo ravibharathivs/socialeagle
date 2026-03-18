@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "AutoTranscripter",
+  "version": "2.0.0",
+  "description": "Real-time meeting transcription — supports Claude, OpenAI, Gemini, Google Translate, Ollama, and custom APIs",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://meet.google.com/*",
+    "https://teams.microsoft.com/*",
+    "https://zoom.us/*",
+    "https://app.zoom.us/*",
+    "https://api.anthropic.com/*",
+    "https://api.openai.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://translation.googleapis.com/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "optional_host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://meet.google.com/*",
+        "https://teams.microsoft.com/*",
+        "https://zoom.us/*",
+        "https://app.zoom.us/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

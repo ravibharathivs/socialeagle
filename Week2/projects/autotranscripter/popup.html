@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoTranscripter</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-icon">🎙️</div>
+    <div>
+      <div class="header-title">AutoTranscripter</div>
+      <div class="header-subtitle">Real-time meeting transcription</div>
+    </div>
+  </div>
+
+  <!-- Meeting page status -->
+  <div class="status-card not-supported" id="status-card">
+    <div class="status-dot"></div>
+    <div class="status-text">
+      <strong id="status-title">Checking...</strong>
+      <span id="status-detail">Detecting current page</span>
+    </div>
+  </div>
+
+  <!-- Provider Selection -->
+  <div class="section">
+    <div class="section-label">AI Provider</div>
+    <select id="provider-select" class="provider-select">
+      <option value="claude">Claude (Anthropic)</option>
+      <option value="openai">OpenAI</option>
+      <option value="gemini">Google Gemini</option>
+      <option value="google-translate">Google Translate</option>
+      <option value="ollama">Ollama (Local Machine)</option>
+      <option value="custom">Custom (OpenAI-compatible)</option>
+    </select>
+    <div class="provider-badge" id="active-badge">Active</div>
+  </div>
+
+  <!-- Dynamic Configuration -->
+  <div class="section" id="config-section">
+    <div class="section-label">Configuration</div>
+
+    <!-- Endpoint URL (Ollama / Custom) -->
+    <div class="config-field hidden" id="field-endpoint">
+      <label class="field-label">Endpoint URL</label>
+      <input
+        type="text"
+        class="field-input"
+        id="config-endpoint"
+        placeholder="http://localhost:11434"
+        spellcheck="false"
+        autocomplete="off"
+      />
+    </div>
+
+    <!-- API Key -->
+    <div class="config-field" id="field-api-key">
+      <label class="field-label" id="api-key-label">API Key</label>
+      <div class="input-row">
+        <input
+          type="password"
+          class="field-input"
+          id="config-api-key"
+          placeholder="sk-ant-..."
+          spellcheck="false"
+          autocomplete="off"
+        />
+        <button class="icon-btn" id="toggle-visibility" title="Show / hide key">👁</button>
+      </div>
+    </div>
+
+    <!-- Model -->
+    <div class="config-field" id="field-model">
+      <label class="field-label">Model</label>
+      <input
+        type="text"
+        class="field-input"
+        id="config-model"
+        list="model-suggestions"
+        placeholder="claude-haiku-4-5-20251001"
+        spellcheck="false"
+        autocomplete="off"
+      />
+      <datalist id="model-suggestions"></datalist>
+    </div>
+
+    <!-- Provider note (shown for Ollama, Custom, Google Translate) -->
+    <div class="provider-note hidden" id="provider-note"></div>
+
+    <button class="save-btn" id="save-btn">Save &amp; Activate</button>
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <!-- Info -->
+  <div class="section">
+    <div class="section-label">Extension Info</div>
+    <ul class="info-list">
+      <li>
+        <span class="label">Supported sites</span>
+        <span class="value">
+          <span class="tag">Meet</span>
+          <span class="tag">Teams</span>
+          <span class="tag">Zoom</span>
+        </span>
+      </li>
+      <li>
+        <span class="label">Languages</span>
+        <span class="value">
+          <span class="tag">English</span>
+          <span class="tag">Tamil → English</span>
+        </span>
+      </li>
+      <li>
+        <span class="label">Speech API</span>
+        <span class="value">Web Speech API (Chrome)</span>
+      </li>
+    </ul>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

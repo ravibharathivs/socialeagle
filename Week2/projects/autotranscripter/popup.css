@@ -1,0 +1,287 @@
+/* AutoTranscripter Popup Styles v2 */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 330px;
+  background: #111118;
+  color: #e0e0e0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-icon { font-size: 22px; line-height: 1; }
+
+.header-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+.header-subtitle { font-size: 10px; color: #666; }
+
+/* ── Meeting-page status ── */
+.status-card {
+  margin: 12px 12px 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-card.supported {
+  background: rgba(52, 199, 89, 0.08);
+  border-color: rgba(52, 199, 89, 0.3);
+}
+
+.status-card.not-supported {
+  background: rgba(142, 142, 147, 0.08);
+  border-color: rgba(142, 142, 147, 0.2);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-card.supported .status-dot {
+  background: #34c759;
+  box-shadow: 0 0 6px rgba(52, 199, 89, 0.5);
+}
+
+.status-card.not-supported .status-dot { background: #555; }
+
+.status-text strong { display: block; font-size: 12px; font-weight: 600; }
+.status-text span   { font-size: 11px; color: #666; }
+
+.status-card.supported .status-text strong     { color: #34c759; }
+.status-card.not-supported .status-text strong { color: #888; }
+
+/* ── Sections ── */
+.section {
+  padding: 12px 12px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section:last-child { border-bottom: none; }
+
+.section-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* ── Provider select ── */
+.provider-select {
+  width: 100%;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  color: #e0e0e0;
+  font-size: 13px;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+  transition: border-color 0.2s;
+}
+
+.provider-select:focus {
+  border-color: rgba(10, 132, 255, 0.5);
+}
+
+.provider-select option {
+  background: #1c1c2e;
+  color: #e0e0e0;
+}
+
+/* Active provider badge */
+.provider-badge {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: rgba(10, 132, 255, 0.15);
+  border: 1px solid rgba(10, 132, 255, 0.3);
+  color: #0a84ff;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.provider-badge.visible { opacity: 1; }
+
+/* ── Config fields ── */
+.config-field {
+  margin-bottom: 10px;
+}
+
+.config-field.hidden { display: none; }
+
+.field-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #777;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.field-input {
+  width: 100%;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-size: 12px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.field-input:focus {
+  border-color: rgba(10, 132, 255, 0.5);
+  background: rgba(10, 132, 255, 0.04);
+}
+
+.field-input::placeholder { color: #3a3a4a; }
+
+.input-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.input-row .field-input { flex: 1; }
+
+.icon-btn {
+  padding: 7px 9px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #888;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.icon-btn:hover { background: rgba(255, 255, 255, 0.1); color: #ccc; }
+
+/* Provider note */
+.provider-note {
+  padding: 7px 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background: rgba(255, 204, 0, 0.07);
+  border: 1px solid rgba(255, 204, 0, 0.2);
+  color: #c8a800;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.provider-note.hidden { display: none; }
+
+/* ── Save button ── */
+.save-btn {
+  width: 100%;
+  padding: 8px;
+  background: rgba(10, 132, 255, 0.15);
+  border: 1px solid rgba(10, 132, 255, 0.4);
+  border-radius: 6px;
+  color: #0a84ff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.save-btn:hover   { background: rgba(10, 132, 255, 0.25); }
+.save-btn:active  { background: rgba(10, 132, 255, 0.35); }
+.save-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Toast ── */
+.toast {
+  margin-top: 6px;
+  font-size: 11px;
+  text-align: center;
+  height: 14px;
+  transition: color 0.3s;
+}
+
+.toast.success { color: #34c759; }
+.toast.error   { color: #ff3b30; }
+
+/* ── Info list ── */
+.info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.info-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+}
+
+.info-list .label { color: #666; }
+
+.info-list .value {
+  color: #aaa;
+  font-weight: 500;
+  text-align: right;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.07);
+  color: #999;
+  margin-left: 3px;
+}
