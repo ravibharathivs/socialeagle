@@ -5,6 +5,9 @@ venv/
 ENV/
 .myenv/
 
+#environment variables
+.env
+
 # VS Code / Pylance
 .vscode/
 .python-learn/

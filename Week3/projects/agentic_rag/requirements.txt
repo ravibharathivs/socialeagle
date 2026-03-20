@@ -1,0 +1,3 @@
+openai>=1.0.0
+streamlit>=1.25
+serpapi==0.1.6
